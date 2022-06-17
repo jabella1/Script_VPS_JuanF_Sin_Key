@@ -96,7 +96,7 @@ stop_install() {
 }
 
 time_reboot() {
-  print_center -ama "RESTARTING VPS IN $1 SECONDS"
+  print_center -ama "REINICIANDO VPS IN $1 SEGUNDOS"
   REBOOT_TIMEOUT="$1"
 
   while [ $REBOOT_TIMEOUT -gt 0 ]; do
@@ -134,9 +134,9 @@ dependencias() {
     for ((a = 0; a < $puntos; a++)); do
       pts+="."
     done
-    msg -nazu "    installing $i$(msg -ama "$pts")"
+    msg -nazu "    INSTALANDO $i$(msg -ama "$pts")"
     if apt install $i -y &>/dev/null; then
-      msg -verd " INSTALLED"
+      msg -verd " INSTALADO By JuanFCol"
     else
       msg -verm2 " ERROR"
       sleep 2
@@ -148,7 +148,7 @@ dependencias() {
 
       msg -nazu "    installing $i$(msg -ama "$pts")"
       if apt install $i -y &>/dev/null; then
-        msg -verd " INSTALLED"
+        msg -verd " INSTALADO By JuanFCol"
       else
         msg -verm2 " ERROR"
       fi
@@ -158,24 +158,24 @@ dependencias() {
 
 post_reboot() {
   echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/installer/install-without-key.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
-  title -verd "COMPLETED SYSTEM UPGRADE"
-  print_center -ama "The installation will continue\nafter rebooting!!!"
+  title -verd "COMPLETADA-ACTUALIZACION DEL SISTEMA"
+  print_center -ama "La instalacion continuara\despues de reiniciar!!!"
   msg -bar
 }
 
 install_start() {
   msg -bar
 
-  echo -e "\e[1;97m           \e[5m\033[1;100m   SYSTEM UPDATE   \033[1;37m"
+  echo -e "\e[1;97m           \e[5m\033[1;100m   Actualizando Sistema   \033[1;37m"
   msg -bar
-  print_center -ama "System packages are updating.\n It may take a while and ask for some confirmations.\n"
+  print_center -ama "Los paquetes del sistema se estan actualizando\n Puede tomar un tiempo y pedir algunas confirmaciones.\n"
   msg -bar3
-  msg -ne "\n Do you wish to continue? [Y/N]: "
+  msg -ne "\n Desea continuar? [Y/N]: "
   read opcion
   [[ "$opcion" != @(y|Y) ]] && stop_install
   clear && clear
   msg -bar
-  echo -e "\e[1;97m           \e[5m\033[1;100m   SYSTEM UPDATE   \033[1;37m"
+  echo -e "\e[1;97m           \e[5m\033[1;100m   SISTEMA ACTUALIZADO.   \033[1;37m"
   msg -bar
   os_system
   apt update -y
@@ -185,21 +185,21 @@ install_start() {
 install_continue() {
   os_system
   msg -bar
-  echo -e "      \e[5m\033[1;100m   COMPLETING PACKAGES FOR THE SCRIPT   \033[1;37m"
+  echo -e "      \e[5m\033[1;100m   COMPLETOS LOS PAQUETES PARA EL SCRIPT   \033[1;37m"
   msg -bar
   print_center -ama "$distro $vercion"
-  print_center -verd "INSTALLING DEPENDENCIES"
+  print_center -verd "INSTALANDO DEPENDENCIAS"
   msg -bar3
   dependencias
   msg -bar3
-  print_center -azu "Removing obsolete packages"
+  print_center -azu "Removiendo paquetes obsoletos"
   apt autoremove -y &>/dev/null
   sleep 2
   tput cuu1 && tput dl1
   msg -bar
-  print_center -ama "If some of the dependencies fail!!!\nwhen finished, you can try to install\nthe same manually using the following command\napt install package_name"
+  print_center -ama "Si alguna dependencia falla!!!\ncuando termine, puedes intentar instalarla\nmanualmente usando el/los siguiente/s comandos\napt install package_name"
   msg -bar
-  read -t 60 -n 1 -rsp $'\033[1;39m       << Press enter to continue >>\n'
+  read -t 60 -n 1 -rsp $'\033[1;39m       << Presiona enter para continuar >>\n'
 }
 
 while :; do
@@ -222,7 +222,7 @@ done
 
 clear && clear
 msg -bar2
-echo -e " \e[5m\033[1;100m   =====>> ►► 🐲 VPS-AGN - SCRIPT  🐲 ◄◄ <<=====   \033[1;37m"
+echo -e " \e[5m\033[1;100m   =====>> ►► 🐲 @JuanFCol - SCRIPT  🐲 ◄◄ <<=====   \033[1;37m"
 msg -bar2
 print_center -ama "AVAILABLE SCRIPT LIST"
 msg -bar
@@ -231,18 +231,18 @@ wget https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master
 chmod +x /usr/bin/SPR
 
 
-#VPS-AGN 8.6 OFFICIAL
+#VPS-JuanFCol 8.6 OFFICIAL
 install_official() {
   clear && clear
   msg -bar
-  echo -ne "\033[1;97m Type your slogan: \033[1;32m" && read slogan
+  echo -ne "\033[1;97m Digite su eslogan: \033[1;32m" && read slogan
   tput cuu1 && tput dl1
   echo -e "$slogan"
   msg -bar
   clear && clear
   mkdir /etc/VPS-AGN >/dev/null 2>&1
   cd /etc
-  wget https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/SCRIPT-v8.5x/VPS-AGN.tar.xz >/dev/null 2>&1
+  wget https://github.com/jabella1/SCRIPT-v8.5x-JuanF-tar.xz/raw/main/VPS-AGN.tar.xz >/dev/null 2>&1
   tar -xf VPS-AGN.tar.xz >/dev/null 2>&1
   chmod +x VPS-AGN.tar.xz >/dev/null 2>&1
   rm -rf VPS-AGN.tar.xz
@@ -288,12 +288,12 @@ install_official() {
   echo "exit 0" >>/etc/rc.local
   echo 'clear' >>.bashrc
   echo 'echo ""' >>.bashrc
-  echo 'echo -e "\t\033[91m __      _______   _____              _____ _   _ " ' >>.bashrc
-  echo 'echo -e "\t\033[91m \ \    / /  __ \ / ____|       /\   / ____| \ | | " ' >>.bashrc
-  echo 'echo -e "\t\033[91m  \ \  / /| |__) | (___ ______ /  \ | |  __|  \| |  " ' >>.bashrc
-  echo 'echo -e "\t\033[91m   \ \/ / |  ___/ \___ \______/ /\ \| | |_ |     |  " ' >>.bashrc
-  echo 'echo -e "\t\033[91m    \  /  | |     ____) |    / ____ \ |__| | |\  | " ' >>.bashrc
-  echo 'echo -e "\t\033[91m     \/   |_|    |_____/    /_/    \_\_____|_| \_|" ' >>.bashrc
+  echo 'echo -e "\t\033[91m __      _______   _____" ' >>.bashrc
+  echo 'echo -e "\t\033[91m \ \    / /  __ \ / ____|" ' >>.bashrc
+  echo 'echo -e "\t\033[91m  \ \  / /| |__) | (___ " ' >>.bashrc
+  echo 'echo -e "\t\033[91m   \ \/ / |  ___/ \___ \" ' >>.bashrc
+  echo 'echo -e "\t\033[91m    \  /  | |     ____) |" ' >>.bashrc
+  echo 'echo -e "\t\033[91m     \/   |_|    |_____/" ' >>.bashrc
   echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/SCRIPT-v8.5x/Version &>/dev/null' >>.bashrc
   echo 'echo "" ' >>.bashrc
   echo 'mess1="$(less /etc/VPS-AGN/message.txt)" ' >>.bashrc
@@ -309,7 +309,7 @@ install_official() {
   service ssh restart &>/dev/null
   clear && clear
   msg -bar
-  echo -e "\e[1;92m             >> INSTALLATION COMPLETED <<" && msg bar2
+  echo -e "\e[1;92m             >> INSTALACION COMPLETA <<" && msg bar2
   echo -e "      MAIN COMMAND TO ENTER THE PANEL "
   echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
 }
@@ -319,7 +319,7 @@ install_official() {
 /bin/cp /etc/skel/.bashrc /etc/bash.bashrc
 echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \e[1;97m INSTALL 8.5x OFFICIAL \e[97m \n"
 msg -bar
-echo -ne "\033[1;97mEnter only the number according to your answer:\e[32m "
+echo -ne "\033[1;97mINGRESA EL NUMERO ACORDE A TU RESPUESTA:\e[32m "
 read opcao
 case $opcao in
 1)
