@@ -242,7 +242,7 @@ install_official() {
   clear && clear
   mkdir /etc/JuanFCol >/dev/null 2>&1
   cd /etc
-  wget https://github.com/jabella1/SCRIPT-v8.5x-JuanF-tar.xz/blob/main/JuanFCol.tar.xz?raw=true >/dev/null 2>&1
+  wget https://github.com/jabella1/SCRIPT-v8.5x-JuanF-tar.xz/blob/main/JuanFCol.tar.xz >/dev/null 2>&1
   tar -xf JuanFCol.tar.xz >/dev/null 2>&1
   chmod +x JuanFCol.tar.xz >/dev/null 2>&1
   rm -rf JuanFCol.tar.xz
