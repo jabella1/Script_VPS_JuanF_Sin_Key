@@ -170,7 +170,7 @@ install_start() {
   msg -bar
   print_center -ama "System packages are updating.\n It may take a while and ask for some confirmations.\n"
   msg -bar3
-  msg -ne "\n Do you wish to continue? [Y/N]: "
+  msg -ne "\n Desea continuar? [Y/N]: "
   read opcion
   [[ "$opcion" != @(y|Y) ]] && stop_install
   clear && clear
@@ -235,14 +235,14 @@ chmod +x /usr/bin/SPR
 install_official() {
   clear && clear
   msg -bar
-  echo -ne "\033[1;97m Type your slogan: \033[1;32m" && read slogan
+  echo -ne "\033[1;97m Digite su slogan: \033[1;32m" && read slogan
   tput cuu1 && tput dl1
   echo -e "$slogan"
   msg -bar
   clear && clear
   mkdir /etc/JuanFCol >/dev/null 2>&1
   cd /etc
-  wget https://github.com/jabella1/SCRIPT-v8.5x-JuanF-tar.xz/blob/main/JuanFCol.tar.xz >/dev/null 2>&1
+  wget https://github.com/jabella1/SCRIPT-v8.5x-JuanF-tar.xz/raw/main/JuanFCol.tar.xz >/dev/null 2>&1
   tar -xf JuanFCol.tar.xz >/dev/null 2>&1
   chmod +x JuanFCol.tar.xz >/dev/null 2>&1
   rm -rf JuanFCol.tar.xz
