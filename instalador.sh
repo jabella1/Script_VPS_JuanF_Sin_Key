@@ -310,7 +310,7 @@ install_official() {
   clear && clear
   msg -bar
   echo -e "\e[1;92m             >> INSTALACION COMPLETA <<" && msg bar2
-  echo -e "      MAIN COMMAND TO ENTER THE PANEL "
+  echo -e "      DIGITE EL SIGUIENTE COMANDO PARA ACCEDER AL PANEL: "
   echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
 }
 
