@@ -157,9 +157,9 @@ dependencias() {
 }
 
 post_reboot() {
-  echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/jabella1/Script_VPS_JuanF_Sin_Key/main/instalador.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
+  echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/installer/install-without-key.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
   title -verd "COMPLETED SYSTEM UPGRADE"
-  print_center -ama "La instalacion continuara\nDespues de reiniciar!!!"
+  print_center -ama "The installation will continue\nafter rebooting!!!"
   msg -bar
 }
 
@@ -170,7 +170,7 @@ install_start() {
   msg -bar
   print_center -ama "System packages are updating.\n It may take a while and ask for some confirmations.\n"
   msg -bar3
-  msg -ne "\n Desea continuar? [Y/N]: "
+  msg -ne "\n Do you wish to continue? [Y/N]: "
   read opcion
   [[ "$opcion" != @(y|Y) ]] && stop_install
   clear && clear
@@ -188,7 +188,7 @@ install_continue() {
   echo -e "      \e[5m\033[1;100m   COMPLETING PACKAGES FOR THE SCRIPT   \033[1;37m"
   msg -bar
   print_center -ama "$distro $vercion"
-  print_center -verd "INSTALANDO DEPENDENCIAS"
+  print_center -verd "INSTALLING DEPENDENCIES"
   msg -bar3
   dependencias
   msg -bar3
@@ -222,7 +222,7 @@ done
 
 clear && clear
 msg -bar2
-echo -e " \e[5m\033[1;100m   =====>> ►► 🐲 SCRIPT BY. @JuanFCol  🐲 ◄◄ <<=====   \033[1;37m"
+echo -e " \e[5m\033[1;100m   =====>> ►► 🐲 VPS-AGN - SCRIPT  🐲 ◄◄ <<=====   \033[1;37m"
 msg -bar2
 print_center -ama "AVAILABLE SCRIPT LIST"
 msg -bar
@@ -231,28 +231,28 @@ wget https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master
 chmod +x /usr/bin/SPR
 
 
-#JuanFCol 8.6 OFFICIAL
+#VPS-AGN 8.6 OFFICIAL
 install_official() {
   clear && clear
   msg -bar
-  echo -ne "\033[1;97m Digite su slogan: \033[1;32m" && read slogan
+  echo -ne "\033[1;97m Type your slogan: \033[1;32m" && read slogan
   tput cuu1 && tput dl1
   echo -e "$slogan"
   msg -bar
   clear && clear
-  mkdir /etc/JuanFCol >/dev/null 2>&1
+  mkdir /etc/VPS-AGN >/dev/null 2>&1
   cd /etc
-  wget https://github.com/jabella1/SCRIPT-v8.5x-JuanF-tar.xz/raw/main/JuanFCol.tar.xz >/dev/null 2>&1
-  tar -xf JuanFCol.tar.xz >/dev/null 2>&1
-  chmod +x JuanFCol.tar.xz >/dev/null 2>&1
-  rm -rf JuanFCol.tar.xz
+  wget https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/SCRIPT-v8.5x/VPS-AGN.tar.xz >/dev/null 2>&1
+  tar -xf VPS-AGN.tar.xz >/dev/null 2>&1
+  chmod +x VPS-AGN.tar.xz >/dev/null 2>&1
+  rm -rf VPS-AGN.tar.xz
   cd
-  chmod -R 755 /etc/ JuanFCol
-  rm -rf /etc/JuanFCol/MEUIPvps
-  echo "/etc/JuanFCol/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
-  echo "/etc/JuanFCol/menu" >/usr/bin/VPSAGN && chmod +x /usr/bin/VPSAGN
+  chmod -R 755 /etc/VPS-AGN
+  rm -rf /etc/VPS-AGN/MEUIPvps
+  echo "/etc/VPS-AGN/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
+  echo "/etc/VPS-AGN/menu" >/usr/bin/VPSAGN && chmod +x /usr/bin/VPSAGN
   wget https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/LINKS-LIBRARIES/monitor.sh -P /bin/
-  echo "$slogan" >/etc/JuanFCol/message.txt
+  echo "$slogan" >/etc/VPS-AGN/message.txt
   [[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
   [[ ! -d /usr/local/lib/ubuntn ]] && mkdir /usr/local/lib/ubuntn
   [[ ! -d /usr/local/lib/ubuntn/apache ]] && mkdir /usr/local/lib/ubuntn/apache
@@ -262,15 +262,15 @@ install_official() {
   [[ ! -d /usr/share/mediaptre/local ]] && mkdir /usr/share/mediaptre/local
   [[ ! -d /usr/share/mediaptre/local/log ]] && mkdir /usr/share/mediaptre/local/log
   [[ ! -d /usr/share/mediaptre/local/log/lognull ]] && mkdir /usr/share/mediaptre/local/log/lognull
-  [[ ! -d /etc/JuanFCol/B-JuanFColuser ]] && mkdir /etc/JuanFCol/B-JuanFColuser
+  [[ ! -d /etc/VPS-AGN/B-VPS-AGNuser ]] && mkdir /etc/VPS-AGN/B-VPS-AGNuser
   [[ ! -d /usr/local/protec ]] && mkdir /usr/local/protec
   [[ ! -d /usr/local/protec/rip ]] && mkdir /usr/local/protec/rip
   [[ ! -d /etc/protecbin ]] && mkdir /etc/protecbin
   cd
-  [[ ! -d /etc/JuanFCol/v2ray ]] && mkdir /etc/JuanFCol/v2ray
-  [[ ! -d /etc/JuanFCol/Slow ]] && mkdir /etc/JuanFCol/Slow
-  [[ ! -d /etc/JuanFCol/Slow/install ]] && mkdir /etc/JuanFCol/Slow/install
-  [[ ! -d /etc/JuanFCol/Slow/Key ]] && mkdir /etc/JuanFCol/Slow/Key
+  [[ ! -d /etc/VPS-AGN/v2ray ]] && mkdir /etc/VPS-AGN/v2ray
+  [[ ! -d /etc/VPS-AGN/Slow ]] && mkdir /etc/VPS-AGN/Slow
+  [[ ! -d /etc/VPS-AGN/Slow/install ]] && mkdir /etc/VPS-AGN/Slow/install
+  [[ ! -d /etc/VPS-AGN/Slow/Key ]] && mkdir /etc/VPS-AGN/Slow/Key
   touch /usr/share/lognull &>/dev/null
   wget -O /bin/resetsshdrop https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/LINKS-LIBRARIES/resetsshdrop &>/dev/null
   chmod +x /bin/resetsshdrop
@@ -288,15 +288,15 @@ install_official() {
   echo "exit 0" >>/etc/rc.local
   echo 'clear' >>.bashrc
   echo 'echo ""' >>.bashrc
-  echo 'echo -e "\t\033[91m __      _______   _____  " ' >>.bashrc
-  echo 'echo -e "\t\033[91m \ \    / /  __ \ / ____| " ' >>.bashrc
-  echo 'echo -e "\t\033[91m  \ \  / /| |__) | (___  " ' >>.bashrc
-  echo 'echo -e "\t\033[91m   \ \/ / |  ___/ \___ \_ " ' >>.bashrc
-  echo 'echo -e "\t\033[91m    \  /  | |     ____) | " ' >>.bashrc
-  echo 'echo -e "\t\033[91m     \/   |_|    |_____/ " ' >>.bashrc
+  echo 'echo -e "\t\033[91m __      _______   _____              _____ _   _ " ' >>.bashrc
+  echo 'echo -e "\t\033[91m \ \    / /  __ \ / ____|       /\   / ____| \ | | " ' >>.bashrc
+  echo 'echo -e "\t\033[91m  \ \  / /| |__) | (___ ______ /  \ | |  __|  \| |  " ' >>.bashrc
+  echo 'echo -e "\t\033[91m   \ \/ / |  ___/ \___ \______/ /\ \| | |_ |     |  " ' >>.bashrc
+  echo 'echo -e "\t\033[91m    \  /  | |     ____) |    / ____ \ |__| | |\  | " ' >>.bashrc
+  echo 'echo -e "\t\033[91m     \/   |_|    |_____/    /_/    \_\_____|_| \_|" ' >>.bashrc
   echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/SCRIPT-v8.5x/Version &>/dev/null' >>.bashrc
   echo 'echo "" ' >>.bashrc
-  echo 'mess1="$(less /etc/JuanFCol/message.txt)" ' >>.bashrc
+  echo 'mess1="$(less /etc/VPS-AGN/message.txt)" ' >>.bashrc
   echo 'echo "" ' >>.bashrc
   echo 'echo -e "\t\033[92mRESELLER : $mess1 "' >>.bashrc
   echo 'echo -e "\t\e[1;33mVERSION: \e[1;31m$(cat /etc/versin_script_new)"' >>.bashrc
@@ -304,7 +304,7 @@ install_official() {
   echo 'echo -e "\t\033[97mTO DISPLAY BASH PANEL TYPE: sudo VPSAGN or menu "' >>.bashrc
   echo 'echo ""' >>.bashrc
   rm -rf /usr/bin/pytransform &>/dev/null
-  rm -rf JuanFCol.sh
+  rm -rf VPS-AGN.sh
   rm -rf lista-arq
   service ssh restart &>/dev/null
   clear && clear
