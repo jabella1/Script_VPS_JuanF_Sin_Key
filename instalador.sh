@@ -247,10 +247,10 @@ install_official() {
   chmod +x JuanFCol.tar.xz >/dev/null 2>&1
   rm -rf JuanFCol.tar.xz
   cd
-  chmod -R 755 /etc/JuanFCol
-  rm -rf /etc/JuanFCol/MEUIPvps
-  echo "/etc/JuanFCol/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
-  echo "/etc/JuanFCol/menu" >/usr/bin/VPSAGN && chmod +x /usr/bin/VPSAGN
+  chmod -R 755 /etc/ JuanFCol
+  rm -rf /etc/ JuanFCol/MEUIPvps
+  echo "/etc/ JuanFCol/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
+  echo "/etc/ JuanFCol/menu" >/usr/bin/VPSAGN && chmod +x /usr/bin/VPSAGN
   wget https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/LINKS-LIBRARIES/monitor.sh -P /bin/
   echo "$slogan" >/etc/JuanFCol/message.txt
   [[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
@@ -262,15 +262,15 @@ install_official() {
   [[ ! -d /usr/share/mediaptre/local ]] && mkdir /usr/share/mediaptre/local
   [[ ! -d /usr/share/mediaptre/local/log ]] && mkdir /usr/share/mediaptre/local/log
   [[ ! -d /usr/share/mediaptre/local/log/lognull ]] && mkdir /usr/share/mediaptre/local/log/lognull
-  [[ ! -d /etc/JuanFCol/B-JuanFColuser ]] && mkdir /etc/JuanFCol/B-JuanFColuser
+  [[ ! -d /etc/ JuanFCol/B-JuanFColuser ]] && mkdir /etc/ JuanFCol/B-JuanFColuser
   [[ ! -d /usr/local/protec ]] && mkdir /usr/local/protec
   [[ ! -d /usr/local/protec/rip ]] && mkdir /usr/local/protec/rip
   [[ ! -d /etc/protecbin ]] && mkdir /etc/protecbin
   cd
-  [[ ! -d /etc/JuanFCol/v2ray ]] && mkdir /etc/JuanFCol/v2ray
-  [[ ! -d /etc/JuanFCol/Slow ]] && mkdir /etc/JuanFCol/Slow
-  [[ ! -d /etc/JuanFCol/Slow/install ]] && mkdir /etc/JuanFCol/Slow/install
-  [[ ! -d /etc/JuanFCol/Slow/Key ]] && mkdir /etc/JuanFCol/Slow/Key
+  [[ ! -d /etc/ JuanFCol/v2ray ]] && mkdir /etc/ JuanFCol/v2ray
+  [[ ! -d /etc/ JuanFCol/Slow ]] && mkdir /etc/ JuanFCol/Slow
+  [[ ! -d /etc/ JuanFCol/Slow/install ]] && mkdir /etc/ JuanFCol/Slow/install
+  [[ ! -d /etc/ JuanFCol/Slow/Key ]] && mkdir /etc/ JuanFCol/Slow/Key
   touch /usr/share/lognull &>/dev/null
   wget -O /bin/resetsshdrop https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/LINKS-LIBRARIES/resetsshdrop &>/dev/null
   chmod +x /bin/resetsshdrop
@@ -296,7 +296,7 @@ install_official() {
   echo 'echo -e "\t\033[91m     \/   |_|    |_____/ " ' >>.bashrc
   echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/SCRIPT-v8.5x/Version &>/dev/null' >>.bashrc
   echo 'echo "" ' >>.bashrc
-  echo 'mess1="$(less /etc/JuanFCol/message.txt)" ' >>.bashrc
+  echo 'mess1="$(less /etc/ JuanFCol/message.txt)" ' >>.bashrc
   echo 'echo "" ' >>.bashrc
   echo 'echo -e "\t\033[92mRESELLER : $mess1 "' >>.bashrc
   echo 'echo -e "\t\e[1;33mVERSION: \e[1;31m$(cat /etc/versin_script_new)"' >>.bashrc
