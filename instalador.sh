@@ -157,9 +157,9 @@ dependencias() {
 }
 
 post_reboot() {
-  echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/installer/install-without-key.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
+  echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/jabella1/Script_VPS_JuanF_Sin_Key/main/instalador.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
   title -verd "COMPLETED SYSTEM UPGRADE"
-  print_center -ama "The installation will continue\nafter rebooting!!!"
+  print_center -ama "La instalacion continuara\nDespues de reiniciar!!!"
   msg -bar
 }
 
@@ -188,7 +188,7 @@ install_continue() {
   echo -e "      \e[5m\033[1;100m   COMPLETING PACKAGES FOR THE SCRIPT   \033[1;37m"
   msg -bar
   print_center -ama "$distro $vercion"
-  print_center -verd "INSTALLING DEPENDENCIES"
+  print_center -verd "INSTALANDO DEPENDENCIAS"
   msg -bar3
   dependencias
   msg -bar3
