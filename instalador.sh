@@ -141,12 +141,12 @@ dependencias() {
       msg -verm2 " ERROR"
       sleep 2
       tput cuu1 && tput dl1
-      print_center -ama "applying fix to $i"
+      print_center -ama "APLICANDO ARREGLOS A $i"
       dpkg --configure -a &>/dev/null
       sleep 2
       tput cuu1 && tput dl1
 
-      msg -nazu "    installing $i$(msg -ama "$pts")"
+      msg -nazu "    INSTALANDO $i$(msg -ama "$pts")"
       if apt install $i -y &>/dev/null; then
         msg -verd " INSTALADO By JuanFCol"
       else
@@ -159,7 +159,7 @@ dependencias() {
 post_reboot() {
   echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/jabella1/Script_VPS_JuanF_Sin_Key/main/instalador.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
   title -verd "COMPLETADA-ACTUALIZACION DEL SISTEMA"
-  print_center -ama "La instalacion continuara\despues de reiniciar!!!"
+  print_center -ama "La instalacion continuara\ndespues de reiniciar!!!"
   msg -bar
 }
 
