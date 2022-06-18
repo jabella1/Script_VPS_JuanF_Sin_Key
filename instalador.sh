@@ -288,11 +288,11 @@ install_official() {
   echo "exit 0" >>/etc/rc.local
   echo 'clear' >>.bashrc
   echo 'echo ""' >>.bashrc
-  echo 'echo -e "\t\033[91m __      _______   _____" ' >>.bashrc
-  echo 'echo -e "\t\033[91m \ \    / /  __ \ / ____|" ' >>.bashrc
-  echo 'echo -e "\t\033[91m  \ \  / /| |__) | (___ " ' >>.bashrc
-  echo 'echo -e "\t\033[91m   \ \/ / |  ___/ \___ \" ' >>.bashrc
-  echo 'echo -e "\t\033[91m    \  /  | |     ____) |" ' >>.bashrc
+   echo 'echo -e "\t\033[91m __      _______   _____               " ' >>.bashrc
+  echo 'echo -e "\t\033[91m \ \    / /  __ \ / ____|       " ' >>.bashrc
+  echo 'echo -e "\t\033[91m  \ \  / /| |__) | (___  " ' >>.bashrc
+  echo 'echo -e "\t\033[91m   \ \/ / |  ___/ \___ \ " ' >>.bashrc
+  echo 'echo -e "\t\033[91m    \  /  | |     ____) | " ' >>.bashrc
   echo 'echo -e "\t\033[91m     \/   |_|    |_____/" ' >>.bashrc
   echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/SCRIPT-v8.5x/Version &>/dev/null' >>.bashrc
   echo 'echo "" ' >>.bashrc
