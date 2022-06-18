@@ -299,8 +299,8 @@ install_official() {
   echo 'mess1="$(less /etc/VPS-AGN/message.txt)" ' >>.bashrc
   echo 'echo "" ' >>.bashrc
   echo 'echo -e "\t\033[92mAUTOR : $mess1 "' >>.bashrc
+  echo 'echo -e "\t\033[92mTELEGRAM : @JuanFCol "' >>.bashrc
   echo 'echo -e "\t\e[1;33mVERSION: \e[1;31m$(cat /etc/versin_script_new)"' >>.bashrc
-  echo -e "\e[1;92m >>TELEGRAM : @JuanFCol<<"
   echo 'echo "" ' >>.bashrc
   echo 'echo -e "\t\033[97mPARA MOSTRAR EL PANEL DIGITA: menu "' >>.bashrc
   echo 'echo ""' >>.bashrc
