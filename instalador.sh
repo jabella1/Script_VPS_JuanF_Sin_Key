@@ -298,7 +298,7 @@ install_official() {
   echo 'echo "" ' >>.bashrc
   echo 'mess1="$(less /etc/VPS-AGN/message.txt)" ' >>.bashrc
   echo 'echo "" ' >>.bashrc
-  echo 'echo -e "\t\033[92mAUTOR : $mess1 "' >>.bashrc
+  echo 'echo -e "\t\033[92mAUTOR : Juan F. "' >>.bashrc
   echo 'echo -e "\t\033[92mTELEGRAM : @JuanFCol "' >>.bashrc
   echo 'echo -e "\t\e[1;33mVERSION: \e[1;31m$(cat /etc/versin_script_new)"' >>.bashrc
   echo 'echo "" ' >>.bashrc
