@@ -249,8 +249,8 @@ install_official() {
   cd
   chmod -R 755 /etc/VPS-AGN
   rm -rf /etc/VPS-AGN/MEUIPvps
-  echo "/etc/VPS-AGN/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
-  echo "/etc/VPS-AGN/menu" >/usr/bin/VPSAGN && chmod +x /usr/bin/VPSAGN
+  echo "/etc/VPS-AGN/men" >/usr/bin/men && chmod +x /usr/bin/men
+  echo "/etc/VPS-AGN/men" >/usr/bin/VPSAGN && chmod +x /usr/bin/VPSAGN
   wget https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/LINKS-LIBRARIES/monitor.sh -P /bin/
   echo "$slogan" >/etc/VPS-AGN/message.txt
   [[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
@@ -302,7 +302,7 @@ install_official() {
   echo 'echo -e "\t\033[92mTELEGRAM : @JuanFCol "' >>.bashrc
   echo 'echo -e "\t\e[1;33mVERSION: \e[1;31m$(cat /etc/versin_script_new)"' >>.bashrc
   echo 'echo "" ' >>.bashrc
-  echo 'echo -e "\t\033[97mPARA MOSTRAR EL PANEL DIGITA: menu "' >>.bashrc
+  echo 'echo -e "\t\033[97mPARA MOSTRAR EL PANEL DIGITA: men "' >>.bashrc
   echo 'echo ""' >>.bashrc
   rm -rf /usr/bin/pytransform &>/dev/null
   rm -rf VPS-AGN.sh
@@ -312,7 +312,7 @@ install_official() {
   msg -bar
   echo -e "\e[1;92m             >> INSTALACION COMPLETA. <<" && msg bar2
   echo -e "      DIGITE EL SIGUIENTE COMANDO PARA ACCEDER AL PANEL "
-  echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
+  echo -e "                      \033[1;41m  men  \033[0;37m" && msg -bar2
 }
 
 #MENUS
