@@ -363,7 +363,7 @@ install_official() {
 /bin/cp /etc/skel/.bashrc ~/
 /bin/cp /etc/skel/.bashrc /etc/bash.bashrc
 echo -ne " \e[1;93m [\e[1;32m1\e[1;93m]\033[1;31m > \e[1;97m INSTALAR 8.5x OFFICIAL By. @JuanFCol \e[97m \n"
-echo -ne " \e[1;93m [\e[1;32m3\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ADMRufu MOD \e[97m \n"
+echo -ne " \e[1;93m [\e[1;32m2\e[1;93m]\033[1;31m > \033[1;97m INSTALAR ADMRufu MOD \e[97m \n"
 msg -bar
 echo -ne "\033[1;97mINGRESE SOLO EL NUMERO ACORDE A SU OPCION:\e[32m "
 read opcao
