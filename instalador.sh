@@ -250,13 +250,13 @@ install_ADMRufu() {
   ADMRufu="/etc/ADMRufu" && [[ ! -d ${ADMRufu} ]] && mkdir ${ADMRufu}
   ADM_inst="${ADMRufu}/install" && [[ ! -d ${ADM_inst} ]] && mkdir ${ADM_inst}
   SCPinstal="$HOME/install"
-  rm -rf /usr/bin/menu
+  rm -rf /usr/bin/menuu
   rm -rf /usr/bin/adm
   rm -rf /usr/bin/ADMRufu
   echo "$slogan" >/etc/ADMRufu/tmp/message.txt
-  echo "${ADMRufu}/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
-  echo "${ADMRufu}/menu" >/usr/bin/adm && chmod +x /usr/bin/adm
-  echo "${ADMRufu}/menu" >/usr/bin/ADMRufu && chmod +x /usr/bin/ADMRufu
+  echo "${ADMRufu}/menuu" >/usr/bin/menuu && chmod +x /usr/bin/menuu
+  echo "${ADMRufu}/menuu" >/usr/bin/adm && chmod +x /usr/bin/adm
+  echo "${ADMRufu}/menuu" >/usr/bin/ADMRufu && chmod +x /usr/bin/ADMRufu
   [[ -z $(echo $PATH | grep "/usr/games") ]] && echo 'if [[ $(echo $PATH|grep "/usr/games") = "" ]]; then PATH=$PATH:/usr/games; fi' >>/etc/bash.bashrc
   echo '[[ $UID = 0 ]] && screen -dmS up /etc/ADMRufu/chekup.sh' >>/etc/bash.bashrc
   echo 'v=$(cat /etc/ADMRufu/vercion)' >>/etc/bash.bashrc
@@ -264,14 +264,14 @@ install_ADMRufu() {
   echo -e "[[ \$(date '+%s' -d \$up) -gt \$(date '+%s' -d \$(cat /etc/ADMRufu/vercion)) ]] && v2=\"Nueva Vercion disponible: \$v >>> \$up\" || v2=\"Script Vercion: \$v\"" >>/etc/bash.bashrc
   echo '[[ -e "/etc/ADMRufu/tmp/message.txt" ]] && mess1="$(less /etc/ADMRufu/tmp/message.txt)"' >>/etc/bash.bashrc
   echo '[[ -z "$mess1" ]] && mess1="@Rufu99"' >>/etc/bash.bashrc
-  echo 'clear && echo -e "\n$(figlet -f big.flf "  ADMRufu")\n        RESELLER : $mess1 \n\n   Para iniciar ADMRufu escriba:  menu \n\n   $v2\n\n"|lolcat' >>/etc/bash.bashrc
+  echo 'clear && echo -e "\n$(figlet -f big.flf "  ADMRufu")\n        RESELLER : $mess1 \n\n   Para iniciar ADMRufu escriba:  menuu \n\n   $v2\n\n"|lolcat' >>/etc/bash.bashrc
 
   update-locale LANG=en_US.UTF-8 LANGUAGE=en
   clear && clear
   msg -bar
   echo -e "\e[1;92m             >> INSTALACION COMPLETADA <<" && msg bar2
   echo -e "      COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
-  echo -e "                      \033[1;41m  menu  \033[0;37m" && msg -bar2
+  echo -e "                      \033[1;41m  menuu  \033[0;37m" && msg -bar2
 }
 
 
